@@ -10,7 +10,7 @@ namespace Logica
     {
         public int Comision { get; set; }
 
-
+        //ERROR
         public int CalcularComision()
         {
             return Comision;

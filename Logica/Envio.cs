@@ -26,6 +26,7 @@ namespace Logica
             Entregado
         }
 
+        //ERROR
         public static bool ValidarActualizacion(string seguimientoAct)
         {
             if (this.Estado == seguimientoAct )

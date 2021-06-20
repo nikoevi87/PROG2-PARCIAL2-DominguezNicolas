@@ -10,6 +10,7 @@ namespace Logica
     {
         public static double EarthRadius { get; private set; }
 
+        //BIEN RESULTO
         public static double CalcularDistancia(Persona point2, Persona point1)
         {
             double distance = 0;

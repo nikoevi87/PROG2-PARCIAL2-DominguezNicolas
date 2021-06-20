@@ -12,9 +12,10 @@ namespace Logica
         public List<Destinatario> Destinatarios { get; set; }
         public List<Repartidor> Repartidors { get; set; }
 
+        //PODRIA RECIBIR UN OBJETO COMPLETO Y NO PARAMETROS SUELTOS
         public string NuevoEnvio(string dni, DateTime fechaEstim, string descripcion)
         {
-            
+            //NO SE ENTIENDE EL IF, AL CREAR ENVIO NO HAY REPARTIDORES
             if (Repartidors.Exists(x => x.Documento == dni )!= true)
             {
                 Destinatario destinatarioEncondo = Destinatarios.Find(x => x.Documento == dni);
@@ -24,7 +25,7 @@ namespace Logica
                 }
                 Envio nuevoEnvio = new Envio();
                 Random numero = new Random();
-                nuevoEnvio.NumeroEnvio = Convert.ToString(numero);
+                nuevoEnvio.NumeroEnvio = Convert.ToString(numero); //MAL USADO RANDOM, ES numero.Next().ToString()
                 nuevoEnvio.Destinat = destinatarioEncondo;
                 nuevoEnvio.Descripcion = descripcion;
 
@@ -36,12 +37,14 @@ namespace Logica
             
         }
 
+        //NO COMPILA
         public Destinatario Destinatario ObtenerDestinatario(string dni)
         {
             Destinatario encontrado = Destinatarios.Find(x => x.Documento == dni;);
             return encontrado ;
         }
 
+        //BIEN RESUELTO
         public Repartidor AsignarRepartidor(Envio envioAsignado)
         {
             double mayor = 0;
